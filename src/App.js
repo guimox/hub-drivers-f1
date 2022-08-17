@@ -57,7 +57,7 @@ function App() {
       await Promise.all(
         arrayDrivers.map(async (driver) => {
           const finalURL = driver.url.split("/").pop();
-          const searchImageSourceURL = `/api.php?action=query&titles=${finalURL}&prop=pageimages&format=json&pithumbsize=400`;
+          const searchImageSourceURL = `https://en.wikipedia.org/w/api.php?action=query&origin=*&titles=${finalURL}&prop=pageimages&format=json&pithumbsize=400`;
           const res2 = await axios.get(searchImageSourceURL);
           const imageSource = Object.values(res2.data.query.pages)[0].thumbnail.source;
           console.log(imageSource);
