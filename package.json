@@ -1,6 +1,7 @@
 {
   "name": "formula1-drivers-hub",
   "version": "0.1.0",
+  "homepage": "https://62fd2ba926ae0744b1ba99a9--effervescent-genie-c96f59.netlify.app/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
