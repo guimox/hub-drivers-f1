@@ -43,7 +43,9 @@ function App() {
 
   useEffect(() => {
     const fetchDriver = async () => {
-      const res1 = await axios.get("http://ergast.com/api/f1/2022/drivers.json?limit=25");
+      const res1 = await axios.get(
+        "https://ergast.com/api/f1/2022/drivers.json?limit=25"
+      );
       const arrayDrivers = res1.data.MRData.DriverTable.Drivers;
       await Promise.all(
         arrayDrivers.map(async (driver) => {

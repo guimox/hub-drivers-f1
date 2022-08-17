@@ -7,4 +7,9 @@ export const SearchBarStyled = styled.input`
   z-index: 5;
   border-radius: 5px;
   border: none;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 5rem;
+    width: 15rem;
+  }
 `;

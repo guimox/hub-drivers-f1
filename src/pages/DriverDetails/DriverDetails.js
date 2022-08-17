@@ -49,7 +49,7 @@ const DriverDetails = ({ selectedDriver, onCloseDriverDetail }) => {
         </ContainerDriverAndGraph>
         <RacesList listRaces={racesList} />
         <ContainerBg>
-          <img src={image} />
+          <img src={image} alt="background" />
         </ContainerBg>
       </ContentDriverDetails>
     </>

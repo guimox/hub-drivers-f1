@@ -20,8 +20,8 @@ export const Main = styled.div`
 `;
 
 export const HeroContent = styled.div`
-  margin: auto;
-  margin-block: 8rem;
+  margin: 0;
+  margin-block: 7rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,19 +31,29 @@ export const HeroContent = styled.div`
 
   h1 {
     color: ${(props) => props.theme.accent};
-    font-size: clamp(1.5rem, 2vw + 5rem, 15rem);
+    font-size: clamp(1rem, 1vw + 4rem, 10rem);
     text-align: center;
     letter-spacing: -0.2rem;
     margin-bottom: -2rem;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: unset;
+    }
   }
 
-  h4 {
+  h2 {
     color: ${(props) => props.theme.text};
-    font-size: clamp(0.5rem, 1vw + 0.5rem, 10rem);
+    font-size: clamp(1rem, 1vw + 3rem, 10rem);
     text-align: center;
-    margin-top: 2rem;
+    letter-spacing: -0.2rem;
+  }
+
+  p {
+    color: ${(props) => props.theme.text};
+    font-size: clamp(0.5rem, 1vw + 1rem, 10rem);
+    text-align: center;
+    margin-top: 1rem;
     margin-bottom: -2rem;
-    letter-spacing: -0.1rem;
   }
 `;
 
@@ -53,8 +63,7 @@ export const HeroBg = styled.div`
   margin: 0;
   top: 0;
   left: 0;
-  width: 100%;
-  height: auto;
+  width: 100vw;
   overflow: hidden;
 `;
 
@@ -64,4 +73,10 @@ export const VideoBg = styled.video`
   width: 100vw;
   height: auto;
   object-fit: cover;
+  margin: 0;
+  padding: 0;
+
+  @media screen and (max-width: 768px) {
+    height: 100vh;
+  }
 `;

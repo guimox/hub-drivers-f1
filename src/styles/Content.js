@@ -6,5 +6,5 @@ export const Content = styled.div`
   justify-content: center;
   margin: auto;
   flex-direction: column;
-  max-width: 95rem;
+  width: 90%;
 `;

@@ -11,7 +11,7 @@ to {
 
 export const DriversListStyled = styled.div`
   z-index: 10;
-  margin-top: -5rem;
+  margin-top: -8rem;
   margin-bottom: 10rem;
   display: flex;
   flex-direction: row;

@@ -10,7 +10,6 @@ const Navbar = ({ updateTheme }) => {
       <button className="accent" onClick={themeClickHandler}>
         Change theme
       </button>
-      <button>Change language</button>
     </NavContainer>
   );
 };
