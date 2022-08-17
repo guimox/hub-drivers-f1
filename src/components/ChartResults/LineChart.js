@@ -8,7 +8,7 @@ const LineChart = ({ raceList }) => {
     <ChartWrapper>
       <Line
         data={{
-          labels: raceList.map((data) => data.raceName),
+          labels: raceList.map((data) => data.Circuit.Location.country),
           datasets: [
             {
               label: "Place Finished",

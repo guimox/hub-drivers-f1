@@ -14,6 +14,11 @@ export default createGlobalStyle`
         color: ${(props) => props.theme.text};
         }
 
+        a {
+            text-decoration: none;
+            color: unset;
+        }
+
     button {
          border: none;
          border-radius: 4px;

@@ -34,7 +34,7 @@ export const GeneralItemList = styled.li`
   :hover {
     background: ${(props) => props.theme.accent};
     color: ${(props) => props.theme.textInverted};
-    cursor: default;
+    cursor: pointer;
 
     ul {
       border: solid 2px white;
