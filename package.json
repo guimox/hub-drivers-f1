@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "homepage": "https://effervescent-genie-c96f59.netlify.app/",
   "private": true,
+  "proxy": "https://en.wikipedia.org/w",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
