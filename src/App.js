@@ -49,10 +49,10 @@ function App() {
       const arrayDrivers = res1.data.MRData.DriverTable.Drivers;
       await Promise.all(
         arrayDrivers.map(async (driver) => {
-          const searchTitle = `/api.php?action=query&generator=search&format=json&gsrsearch=${driver.givenName}_${driver.familyName}&gsrlimit=1&prop=info`;
+          const searchTitle = `https://en.wikipedia.org/w/api.php?action=query&generator=search&format=json&gsrsearch=${driver.givenName}_${driver.familyName}&gsrlimit=1&prop=info`;
           const res2 = await axios.get(searchTitle);
           const driverTitle = Object.values(res2.data.query.pages)[0].title;
-          const linkPhoto = `/api.php?action=query&titles=${driverTitle}&prop=pageimages&format=json&pithumbsize=400`;
+          const linkPhoto = `https://en.wikipedia.org/w/api.php?action=query&titles=${driverTitle}&prop=pageimages&format=json&pithumbsize=400`;
           const res3 = await axios.get(linkPhoto);
           const thumbSource = Object.values(res3.data.query.pages)[0].thumbnail.source;
           driver.photo = thumbSource;
