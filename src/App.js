@@ -47,16 +47,22 @@ function App() {
         "https://ergast.com/api/f1/2022/drivers.json?limit=25"
       );
       const arrayDrivers = res1.data.MRData.DriverTable.Drivers;
+
+      // fixing url of 3 drivers
+      arrayDrivers[0].url = "https://en.wikipedia.org/wiki/Alex_Albon";
+      arrayDrivers[13].url =
+        "https://en.wikipedia.org/wiki/George_Russell_(racing_driver)";
+      arrayDrivers[20].url = "https://en.wikipedia.org/wiki/Zhou_Guanyu";
+
       await Promise.all(
         arrayDrivers.map(async (driver) => {
-          const searchTitle = `https://en.wikipedia.org/w/api.php?action=query&generator=search&format=json&gsrsearch=${driver.givenName}_${driver.familyName}&gsrlimit=1&prop=info`;
-          const res2 = await axios.get(searchTitle);
-          const driverTitle = Object.values(res2.data.query.pages)[0].title;
-          const linkPhoto = `https://en.wikipedia.org/w/api.php?action=query&titles=${driverTitle}&prop=pageimages&format=json&pithumbsize=400`;
-          const res3 = await axios.get(linkPhoto);
-          const thumbSource = Object.values(res3.data.query.pages)[0].thumbnail.source;
-          driver.photo = thumbSource;
-          driver.titleName = driverTitle;
+          const finalURL = driver.url.split("/").pop();
+          const searchImageSourceURL = `/api.php?action=query&titles=${finalURL}&prop=pageimages&format=json&pithumbsize=400`;
+          const res2 = await axios.get(searchImageSourceURL);
+          const imageSource = Object.values(res2.data.query.pages)[0].thumbnail.source;
+          console.log(imageSource);
+          driver.photo = imageSource;
+          driver.titleName = `${driver.givenName} ${driver.familyName}`;
         })
       );
       setIsLoading(false);
