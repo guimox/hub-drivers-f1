@@ -1,3 +1,14 @@
-# formula1-drivers-hub
+# Formula 1 2022 Drivers HUB
 
-Project to display content about the drivers of Formula 1 using Ergast API.
+<b>Live demo: https://main--effervescent-genie-c96f59.netlify.app/</b>
+
+Project created to display content about the drivers of Formula 1 2022 using Ergast API and Wikipedia API. The 
+
+Tech used in this project: 
+  <ul>
+    <li>ReactJS</li>
+    <li>Styled Components</li>
+    <li>ChartJS</li>
+    <li>Axios</li>
+    <li>Ergast API and Wikipedia API</li>
+    </ul>
