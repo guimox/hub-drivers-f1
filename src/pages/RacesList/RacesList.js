@@ -7,13 +7,10 @@ const RacesList = ({ listRaces }) => {
         ? listRaces.map((race) => {
             console.log(race);
             return (
-              <a
-                href={`https://www.youtube.com/results?search_query=${race.raceName}+${race.date}`}
-                target="blank"
-              >
+              <a href={`https://www.youtube.com/results?search_query=${race.raceName}+${race.date}`} target="blank">
                 <GeneralItemList>
-                  <b>{race.raceName}</b>
-                  <b>Round {race.round}</b>
+                  <b className="raceName">{race.raceName}</b>
+                  <b className="raceRound">Round {race.round}</b>
                   <p>Country: {race.Circuit.Location.country}</p>
                   <p>Race Date:{race.date}</p>
                   <ul>

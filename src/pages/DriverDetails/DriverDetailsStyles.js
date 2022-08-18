@@ -14,7 +14,7 @@ export const ContainerDriverAndGraph = styled.div`
   flex-direction: row;
   width: 100%;
   gap: 2rem;
-  opacity: 0.8;
+  opacity: 0.9;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -35,14 +35,14 @@ export const ContainerBg = styled.div`
   top: 0;
   left: 0;
   z-index: -1;
-  height: 100vh;
-  width: 100%;
+  width: 100vw;
+  overflow: hidden;
 
   img {
     filter: grayscale(1);
-    opacity: 0.4;
+    opacity: 0.5;
     width: 100vw;
-    height: auto;
+    height: 100vh;
     object-fit: cover;
     margin: 0;
     padding: 0;

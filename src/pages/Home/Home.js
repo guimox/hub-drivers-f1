@@ -8,7 +8,7 @@ const Home = ({ onGetInputData }) => {
       <HeroContent>
         <h1>Formula 1 2022 </h1>
         <h2>Drivers Hub</h2>
-        <p>Look for data and results from the 2022 season</p>
+        <p>Data and results from the 2022 season</p>
         <SearchBar onInput={onGetInputData} />
       </HeroContent>
       <HeroBg>

@@ -1,7 +1,12 @@
+import { ReactComponent as HelmetLogo } from "./helmet.svg";
+import { LoadingWrapper } from "./LoadingStyles";
+
 const Loading = () => {
   return (
     <>
-      <p>Loading...</p>
+      <LoadingWrapper>
+        <HelmetLogo />
+      </LoadingWrapper>
     </>
   );
 };

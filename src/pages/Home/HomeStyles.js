@@ -30,11 +30,12 @@ export const HeroContent = styled.div`
   transition: all 0.4s ease-in-out;
 
   h1 {
+    font-style: italic;
     color: ${(props) => props.theme.accent};
-    font-size: clamp(1rem, 1vw + 4rem, 10rem);
+    font-size: clamp(1rem, 1vw + 6rem, 10rem);
     text-align: center;
     letter-spacing: -0.2rem;
-    margin-bottom: -2rem;
+    margin-bottom: -1rem;
 
     @media screen and (max-width: 768px) {
       margin-bottom: unset;
@@ -43,14 +44,15 @@ export const HeroContent = styled.div`
 
   h2 {
     color: ${(props) => props.theme.text};
-    font-size: clamp(1rem, 1vw + 3rem, 10rem);
+    font-size: clamp(1rem, 1vw + 4rem, 10rem);
     text-align: center;
     letter-spacing: -0.2rem;
+    font-style: italic;
   }
 
   p {
     color: ${(props) => props.theme.text};
-    font-size: clamp(0.5rem, 1vw + 1rem, 10rem);
+    font-size: clamp(0.5rem, 1vw + 0.5rem, 10rem);
     text-align: center;
     margin-top: 1rem;
     margin-bottom: -2rem;
@@ -69,9 +71,9 @@ export const HeroBg = styled.div`
 
 export const VideoBg = styled.video`
   filter: grayscale(1);
-  opacity: 0.4;
+  opacity: 0.5;
   width: 100vw;
-  height: auto;
+  height: 100vh;
   object-fit: cover;
   margin: 0;
   padding: 0;

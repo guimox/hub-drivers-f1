@@ -1,14 +1,16 @@
-import { Content } from "./styles/Content";
+import { useState, useEffect, useRef } from "react";
+import { darkTheme, lightTheme } from "./styles/theme";
+import { ThemeProvider } from "styled-components";
+import GlobalStyles from "./styles/GlobalStyles";
+import axios from "axios";
+
+import Loading from "./components/Loading/Loading";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
-import { useState, useEffect, useRef } from "react";
+import { Content } from "./styles/Content";
 import DriversList from "./pages/DriverList/DriversList";
 import DriverDetails from "./pages/DriverDetails/DriverDetails";
-import axios from "axios";
-import GlobalStyles from "./styles/GlobalStyles";
-import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "./styles/theme";
-import Loading from "./components/Loading/Loading";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   // states
@@ -30,9 +32,7 @@ function App() {
 
   const showDriverDetailHandler = (driverName) => {
     console.log(driverName);
-    const driverObject = drivers.find(
-      (driver) => driver.driverId === driverName.toLowerCase()
-    );
+    const driverObject = drivers.find((driver) => driver.driverId === driverName.toLowerCase());
     setDriverData(driverObject);
     scrollToTop();
   };
@@ -43,15 +43,12 @@ function App() {
 
   useEffect(() => {
     const fetchDriver = async () => {
-      const res1 = await axios.get(
-        "https://ergast.com/api/f1/2022/drivers.json?limit=25"
-      );
+      const res1 = await axios.get("https://ergast.com/api/f1/2022/drivers.json?limit=25");
       const arrayDrivers = res1.data.MRData.DriverTable.Drivers;
 
       // fixing url of 3 drivers
       arrayDrivers[0].url = "https://en.wikipedia.org/wiki/Alex_Albon";
-      arrayDrivers[13].url =
-        "https://en.wikipedia.org/wiki/George_Russell_(racing_driver)";
+      arrayDrivers[13].url = "https://en.wikipedia.org/wiki/George_Russell_(racing_driver)";
       arrayDrivers[20].url = "https://en.wikipedia.org/wiki/Zhou_Guanyu";
 
       await Promise.all(
@@ -76,9 +73,7 @@ function App() {
   const searchHandler = (inputData) => {
     setSearch(inputData);
   };
-  const filteredDrivers = drivers.filter((driver) =>
-    driver.titleName.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredDrivers = drivers.filter((driver) => driver.titleName.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <>
@@ -93,10 +88,7 @@ function App() {
             <Content>
               <>
                 {driverData ? (
-                  <DriverDetails
-                    selectedDriver={driverData}
-                    onCloseDriverDetail={closeDriverDetailHandler}
-                  />
+                  <DriverDetails selectedDriver={driverData} onCloseDriverDetail={closeDriverDetailHandler} />
                 ) : (
                   <DriversList
                     filteredDrivers={filteredDrivers}
@@ -106,6 +98,7 @@ function App() {
                 )}
               </>
             </Content>
+            <Footer />
           </>
         )}
       </ThemeProvider>
