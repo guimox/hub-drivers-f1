@@ -1,4 +1,5 @@
 import { NavContainer } from "./NavbarStyles";
+import { ReactComponent as ThemeSVG } from "../../media/theme.svg";
 
 const Navbar = ({ updateTheme }) => {
   const themeClickHandler = () => {
@@ -8,7 +9,7 @@ const Navbar = ({ updateTheme }) => {
   return (
     <NavContainer>
       <button className="accent" onClick={themeClickHandler}>
-        Change theme
+        <ThemeSVG />
       </button>
     </NavContainer>
   );

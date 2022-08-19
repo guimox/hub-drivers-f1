@@ -10,7 +10,9 @@ to {
 `;
 
 export const LoadingWrapper = styled.div`
-  animation: ${fadeIn} 1s infinite ease-in-out;
-  margin-top: 10rem;
+  animation: ${fadeIn} 0.2s infinite ease-in-out;
   width: 10rem;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 `;

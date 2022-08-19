@@ -15,4 +15,8 @@ export const NavContainer = styled.div`
     background: transparent;
     color: ${(props) => props.theme.textInverted};
   }
+
+  svg {
+    fill: ${(props) => props.theme.textInverted};
+  }
 `;

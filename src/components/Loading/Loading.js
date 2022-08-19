@@ -1,4 +1,4 @@
-import { ReactComponent as HelmetLogo } from "./helmet.svg";
+import { ReactComponent as HelmetLogo } from "../../media/helmet.svg";
 import { LoadingWrapper } from "./LoadingStyles";
 
 const Loading = () => {
