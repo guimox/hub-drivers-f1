@@ -15,4 +15,5 @@ export const LoadingWrapper = styled.div`
   display: block;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 20rem;
 `;
